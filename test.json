@@ -1,0 +1,57 @@
+{
+    "data": {
+        "retrieveFullShippingQuote": {
+            "transactionId": "SHQ_20210625_0006_ip_10_0_110_58_70531905",
+            "validationStatus": "VALIDATION_NOT_ENABLED",
+            "shipments": [
+                {
+                    "shipmentDetail": {
+                        "name": "Austin",
+                        "shipmentId": "70123"
+                    },
+                    "carriers": [
+                        {
+                            "carrierDetail": {
+                                "carrierCode": "shqfedex1",
+                                "carrierTitle": "Fedex",
+                                "carrierType": "fedEx"
+                            },
+                            "methods": [
+                                {
+                                    "methodDetails": {
+                                        "methodCode": "GROUND_HOME_DELIVERY",
+                                        "methodTitle": "Home Delivery",
+                                        "totalCharges": 15.04
+                                    },
+                                    "timeInTransitOptions": {
+                                        "deliveryDate": "6/26/2021",
+                                        "dispatchDate": "6/25/2021"
+                                    }
+                                }
+                            ],
+                            "calendarDate": {
+                                "availableDeliveryDates": [
+                                    "6/26/2021",
+                                    "6/27/2021",
+                                    "6/28/2021",
+                                    "6/29/2021",
+                                    "6/30/2021",
+                                    "7/1/2021",
+                                    "7/2/2021"
+                                ]
+                            },
+                            "dateFormat": "M/d/yyyy",
+                            "error": null
+                        }
+                    ],
+                    "groupedItems": [
+                        {
+                            "itemId": "57"
+                        }
+                    ]
+                }
+            ],
+            "errors": null
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "public": "_site",
+    "rewrites": [
+      {
+        "source": "/**",
+        "destination": "/index.html"
+      }
+    ]
+  }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="/logo192.png" />
+
+  <link rel="manifest" href="/manifest.json" />
+
+  <title>Bold Shipping Widget</title>
+  <script>
+          
+    window.addEventListener('readystatechange', function (event) {
+        let message = event;
+        console.log({readystatechange: message})
+
+    });
+        document.addEventListener('DOMContentLoaded', function () {
+            parent.postMessage({
+                type: 'checkout/initialize'
+            }, '*');
+            parent.postMessage({
+                type: 'checkout/resize_frame',
+                payload: {
+                    height: 300
+                }
+            }, '*');
+            // Request order data from Cashier:
+            parent.postMessage({
+                type: 'checkout/request_order'
+            }, '*');
+        });
+        window.addEventListener('message', function (event) {
+            let message = event.data;
+            console.log({widget: message})
+            switch (message.type) {
+                case 'checkout/receive_order':
+                    console.log('Received order data', message.payload);
+                    break;
+            }
+        });
+    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <div id="cc-form"></div>
+</body>
+
+</html>
